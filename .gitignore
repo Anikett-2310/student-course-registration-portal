@@ -1,0 +1,25 @@
+# Maven build output
+target/
+
+# Local scratch files and IDE settings
+/scratch/
+/.idea/
+/.vscode/
+
+# Generated deployment artifacts and backups
+/backup_student-course-registration_exploded/
+/backup_student-course-registration_prod.war
+*.war
+/*.zip
+/*.zip.sha256
+
+# Local environment configuration and production database dump
+/presentation-kit/config/portal-env.bat
+/backup_student_course_portal_prod.sql
+
+# Common local files
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example

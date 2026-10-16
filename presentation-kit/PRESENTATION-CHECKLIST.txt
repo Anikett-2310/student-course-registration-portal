@@ -1,0 +1,148 @@
+================================================================================
+  FACULTY PRESENTATION RUNBOOK & DEMONSTRATION CHECKLIST
+  Student Course Registration Portal (R22 Curriculum & Elective Governance)
+================================================================================
+
+This runbook guides you step-by-step through presenting the project to faculty.
+Follow this script for a flawless, impressive demonstration.
+
+--------------------------------------------------------------------------------
+1. PRE-PRESENTATION PREPARATION (5 Minutes Before Faculty Arrives)
+--------------------------------------------------------------------------------
+[ ] 1. Open Command Prompt in `presentation-kit\`
+[ ] 2. Run: VERIFY-SETUP.bat
+       Confirm all 6 checks show [PASS].
+[ ] 3. Run: Start-Portal.bat
+       Wait for the browser to open to:
+       http://localhost:8088/student-course-registration/
+[ ] 4. Keep two browser windows/incognito tabs ready:
+       Window A: Student Portal
+       Window B: Faculty / Admin Dashboard
+
+--------------------------------------------------------------------------------
+2. QUICK CREDENTIALS REFERENCE CARD
+--------------------------------------------------------------------------------
++--------------------+---------------------+---------------------+-------------+
+| Role               | Identifier / ID     | Password            | Cohort/Year |
++--------------------+---------------------+---------------------+-------------+
+| Faculty / Admin    | demo_admin          | DemoAdmin#2026      | N/A         |
+| Student (Year 1)   | 26881A1201 (Aarav)  | DemoStudent#2026    | Year 1 Sem 1|
+| Student (Year 2)   | 25881A1201 (Diya)   | DemoStudent#2026    | Year 2 Sem 1|
+| Student (Year 3)   | 24881A1201 (Kavya)  | DemoStudent#2026    | Year 3 Sem 1|
+| Student (Year 4)   | 23881A1201 (Rohan)  | DemoStudent#2026    | Year 4 Sem 1|
++--------------------+---------------------+---------------------+-------------+
+
+--------------------------------------------------------------------------------
+3. STEP-BY-STEP PRESENTATION SCRIPT FOR FACULTY
+--------------------------------------------------------------------------------
+
+STAGE 1: ARCHITECTURAL OVERVIEW (What to say to faculty)
+  "Good morning Professors. Today I am presenting our Student Course Registration
+   Portal. The architecture is built on Jakarta EE (Tomcat 10.1), MVC pattern
+   using Java Servlets, JSP, JDBC, and a normalized MySQL 8 database. It features
+   comprehensive R22 curriculum modeling, open elective catalog management, and
+   real-time academic window governance."
+
+STAGE 2: STUDENT MULTI-COHORT LOGIN & CLIENT-SIDE VALIDATION
+  1. Open http://localhost:8088/student-course-registration/
+     (or index.html; login.html will automatically forward to index.html)
+  2. Demonstrate Roll Number Validation:
+     - Try typing `INVALID_ID` -> Show immediate regex validation rejection.
+     - Explain to faculty: "Our client-side validation enforces standard JNTUH/R22
+       10-character alphanumeric roll numbers (e.g., 24881A1201) with versioned
+       script cache-busting (?v=2.0.1) to avoid browser caching discrepancies."
+  3. Log in with Year 3 student:
+     - ID: `24881A1201`
+     - Password: `DemoStudent#2026`
+  4. Notice the student dashboard displays:
+     - Student Name: Kavya Reddy
+     - Department: Information Technology (IT)
+     - Year 3, Semester 1
+     - R22 Curriculum Catalog loaded with core subjects and elective baskets.
+
+STAGE 3: SHOW REGISTRATION WINDOW ENFORCEMENT (CLOSED STATE)
+  1. Point out to faculty: "Notice that all course registration buttons are
+     disabled or show 'Window Closed'."
+  2. Attempt to submit a registration request:
+     - The system clearly displays: "Registration window is currently closed for
+       Year 3 Semester 1. Please contact the administrator."
+  3. Explain to faculty: "Registrations cannot occur outside official academic
+     dates. Window status is verified on both the client and securely enforced
+     in the backend servlet layer with transaction isolation."
+
+STAGE 4: FACULTY / ADMIN GOVERNANCE & OPENING THE WINDOW
+  1. Open another browser tab:
+     http://localhost:8088/student-course-registration/admin-login.html
+  2. Log in with:
+     - Username: `demo_admin`
+     - Password: `DemoAdmin#2026`
+  3. Tour the Admin Dashboard:
+     - Student Management: View registered students across all four cohorts.
+     - Course Management: Prototype catalog and active enrollments.
+     - Registration Windows Governance Table.
+  4. HOW TO OPEN THE REGISTRATION WINDOW FOR LIVE DEMO:
+     - Scroll to the "Registration Windows" management section.
+     - Locate row: "Year 3 - Semester 1".
+     - Notice the Status badge is currently [CLOSED] (Red).
+     - Click the "Open Window" button (or toggle switch).
+     - Confirm the badge turns to [OPEN] (Green).
+  5. Point out to faculty: "The window for Year 3 Semester 1 is now active in
+     the database."
+
+STAGE 5: LIVE COURSE ENROLLMENT DEMONSTRATION
+  1. Switch back to Kavya Reddy's tab (Year 3 Sem 1) and refresh:
+     - The registration window banner now shows [WINDOW OPEN] (Green).
+     - The elective selection options are now enabled!
+  2. Select an Open Elective:
+     - Choose: "OE1: Cloud Computing (R22IT3101)" or "OE1: Cyber Security"
+     - Click "Confirm & Register".
+  3. Show Instant Success Feedback:
+     - Success banner: "Course registered successfully!"
+     - The student's Registered Courses list updates immediately.
+     - Total Credits counter updates automatically.
+
+STAGE 6: DUPLICATE & CONFLICT PREVENTION SAFEGUARDS
+  1. Try registering for the EXACT same course again:
+     - System immediately rejects: "You are already registered for this course."
+     - Explain to faculty: "Enforced via compound database unique constraints
+       (student_id + course_code) and server-side duplicate checks."
+  2. If applicable, attempt to select two courses in the same elective slot:
+     - System warns about elective slot collision.
+
+STAGE 7: CLOSING THE REGISTRATION WINDOW AFTERWARDS
+  1. Return to the Admin tab.
+  2. In the "Registration Windows" section, locate "Year 3 - Semester 1".
+  3. Click "Close Window".
+  4. Confirm the badge switches back to [CLOSED] (Red).
+  5. Return to Kavya's tab and refresh:
+     - Course registration is once again securely locked.
+
+STAGE 8: CLEAN SHUTDOWN
+  1. When your presentation concludes, close the browser tabs.
+  2. Open Command Prompt and run:
+     Stop-Portal.bat
+  3. Confirm port 8088 is cleanly released.
+
+--------------------------------------------------------------------------------
+4. VIVA QUESTIONS & INSTANT ANSWERS CHEATSHEET
+--------------------------------------------------------------------------------
+Q: Why did you use Tomcat 10.1 instead of Tomcat 9?
+A: Tomcat 10.1 implements the modern Jakarta EE 10 specification (`jakarta.servlet.*`)
+   rather than legacy `javax.servlet.*`, providing forward compatibility with
+   current enterprise Java standards.
+
+Q: How do you prevent SQL Injection?
+A: All database queries in our Servlets (`LoginServlet`, `RegisterCourseServlet`,
+   `AdminServlet`) strictly use JDBC `PreparedStatement` with parameterized queries
+   (`?`), avoiding any dynamic string concatenation.
+
+Q: How do you prevent students from tampering with requests when windows are closed?
+A: Even if a user bypasses HTML UI controls, `RegisterCourseServlet` validates the
+   current window status directly against the `registration_windows` table before
+   executing any insert.
+
+Q: How are database credentials managed?
+A: In our deployment model, credentials are not hardcoded; they are injected via
+   environment variables (`PORTAL_DB_URL`, `PORTAL_DB_USER`, `PORTAL_DB_PASSWORD`)
+   and Tomcat JVM properties, failing safely if credentials are not provided.
+================================================================================

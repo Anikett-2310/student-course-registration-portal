@@ -1,0 +1,15 @@
+============================================================================ 
+PRESENTATION KIT SETUP VERIFICATION LOG - 14-10-2026  0.07.28.96 
+============================================================================ 
+  [OK] config\portal-env.bat found. 
+  [OK] Bundled portable Java 21 runtime detected in jre\. 
+  [OK] Java runtime working: 
+openjdk version "27" 2026-09-15
+OpenJDK Runtime Environment Corretto-27.0.0.35.1 (build 27+35-FR)
+OpenJDK 64-Bit Server VM Corretto-27.0.0.35.1 (build 27+35-FR, mixed mode, sharing)
+  [OK] application\student-course-registration.war found. 
+  [OK] application\CHECKSUM-SHA256.txt found. 
+  [OK] Isolated demo Tomcat found. 
+  [OK] tomcat\conf\server.xml found. 
+  [OK] Port 8088 is available. 
+  [OK] MySQL service listening on port 3306. 

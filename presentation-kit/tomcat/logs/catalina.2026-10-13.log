@@ -1,0 +1,40 @@
+13-Oct-2026 23:59:20.863 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.60
+13-Oct-2026 23:59:20.868 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 9 2026 22:35:59 UTC
+13-Oct-2026 23:59:20.868 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.60.0
+13-Oct-2026 23:59:20.868 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\anike\.jdks\corretto-27
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           27+35-FR
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat
+13-Oct-2026 23:59:20.870 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=c:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat\conf\logging.properties
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcourseportal.db.url=jdbc:mysql://localhost:3306/student_course_portal_demo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcourseportal.db.user=portal_demo
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcourseportal.db.password=DemoPortal#2026
+13-Oct-2026 23:59:20.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=c:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat
+13-Oct-2026 23:59:20.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=c:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat
+13-Oct-2026 23:59:20.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=c:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat\temp
+13-Oct-2026 23:59:20.911 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.16] using APR version [1.7.6].
+13-Oct-2026 23:59:20.943 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.8 25 Aug 2026]
+13-Oct-2026 23:59:21.438 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8088"]
+13-Oct-2026 23:59:21.471 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1039] milliseconds
+13-Oct-2026 23:59:21.540 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+13-Oct-2026 23:59:21.540 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.60]
+13-Oct-2026 23:59:21.606 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat\webapps\student-course-registration.war]
+13-Oct-2026 23:59:28.472 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Oct-2026 23:59:28.766 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [124] milliseconds.
+13-Oct-2026 23:59:28.879 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\anike\OneDrive\Desktop\clg html\course end\presentation-kit\tomcat\webapps\student-course-registration.war] has finished in [7,272] ms
+13-Oct-2026 23:59:28.912 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8088"]
+13-Oct-2026 23:59:29.124 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7651] milliseconds

@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [13/Oct/2026:23:59:49 +0530] "GET /student-course-registration/ HTTP/1.1" 200 3368
+0:0:0:0:0:0:0:1 - - [13/Oct/2026:23:59:49 +0530] "GET /student-course-registration/admin-login.html HTTP/1.1" 200 3990
+0:0:0:0:0:0:0:1 - - [13/Oct/2026:23:59:49 +0530] "GET /student-course-registration/login.html HTTP/1.1" 200 277
+0:0:0:0:0:0:0:1 - - [13/Oct/2026:23:59:52 +0530] "POST /student-course-registration/LoginServlet HTTP/1.1" 302 -

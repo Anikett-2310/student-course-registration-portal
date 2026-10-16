@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | Course Registration Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Portal Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="portal-title">
+                <h1>Student Course Registration Portal</h1>
+                <p>Web Technologies Laboratory — Department of Information Technology</p>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Student Portal</a>
+                <a href="admin-login.html">Admin Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Student Login</h2>
+                <p class="subtitle">Enter your roll number and password to access course registration</p>
+
+                <!-- Server-side alert container (read via URL query parameters) -->
+                <div id="serverStatus" style="display: none;"></div>
+
+                <!-- Client-side JavaScript validation error container -->
+                <div id="clientError" class="alert alert-error" style="display: none;"></div>
+
+                <!-- Login Form submitting to LoginServlet -->
+                <form action="LoginServlet" method="POST" onsubmit="return validateStudentLogin();">
+                    <div class="form-group">
+                        <label for="studentId">Student ID / Roll No</label>
+                        <input type="text" id="studentId" name="studentId" class="form-control"
+                               placeholder="e.g., 26881A1201, 24881A1203" autocomplete="username">
+                        <p class="form-hint">Format: 10-digit Roll No (e.g., 26881A1201, 25881A1201, 24881A1203, 23881A1203)</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control"
+                                placeholder="Enter your password" autocomplete="current-password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+
+                <!-- Switch to Admin Login -->
+                <div class="portal-switch">
+                    Faculty / Admin? <a href="admin-login.html">Log in here &rarr;</a>
+                </div>
+
+                <!-- Verified Accounts for Examination & Testing -->
+                <div class="demo-box">
+                    <strong>Active Student Accounts:</strong>
+                    <ul>
+                        <li><strong>ID:</strong> 24881A1201 - 24881A1205 | <strong>Pass:</strong> student123</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; Web Technologies Laboratory Course-End Project — B.Tech IT</p>
+    </footer>
+
+    <!-- Form Validation Script with Cache-Busting Version -->
+    <script src="js/validation.js?v=2.0.1"></script>
+</body>
+</html>

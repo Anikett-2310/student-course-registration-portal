@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Login | Course Registration Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Portal Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="portal-title">
+                <h1>Student Course Registration Portal</h1>
+                <p>Administrative Control Panel — Department of Information Technology</p>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Student Portal</a>
+                <a href="admin-login.html" class="active">Admin Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Admin Login</h2>
+                <p class="subtitle">Enter administrator credentials to manage courses and registrations</p>
+
+                <!-- Server-side alert container (read via URL query parameters) -->
+                <div id="serverStatus" style="display: none;"></div>
+
+                <!-- Client-side JavaScript validation error container -->
+                <div id="clientError" class="alert alert-error" style="display: none;"></div>
+
+                <!-- Admin Login Form submitting to AdminLoginServlet -->
+                <form action="AdminLoginServlet" method="POST" onsubmit="return validateAdminLogin();">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                               placeholder="e.g., admin" autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control"
+                               placeholder="Enter admin password" autocomplete="current-password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Log In as Admin</button>
+                </form>
+
+                <!-- Switch to Student Login -->
+                <div class="portal-switch">
+                    Student? <a href="index.html">&larr; Go to Student Portal</a>
+                </div>
+
+                <!-- Demo Credentials for Examination & Testing -->
+                <div class="demo-box">
+                    <strong>Demo Admin Account:</strong>
+                    <ul>
+                        <li><strong>Username:</strong> admin | <strong>Password:</strong> admin123</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; Web Technologies Laboratory Course-End Project — B.Tech IT</p>
+    </footer>
+
+    <!-- Form Validation Script -->
+    <script src="js/validation.js"></script>
+    <script>
+        function validateAdminLogin() {
+            var user = document.getElementById("username").value.trim();
+            var pass = document.getElementById("password").value.trim();
+            var err = document.getElementById("clientError");
+
+            if (err) {
+                err.style.display = "none";
+                err.innerText = "";
+            }
+
+            if (user === "") {
+                if (err) { err.innerText = "Please enter administrator username."; err.style.display = "block"; }
+                return false;
+            }
+            if (pass === "") {
+                if (err) { err.innerText = "Please enter administrator password."; err.style.display = "block"; }
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

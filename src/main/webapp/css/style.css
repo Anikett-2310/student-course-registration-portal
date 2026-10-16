@@ -1,0 +1,559 @@
+/* ==========================================================================
+   Student Course Registration Portal
+   Academic Theme: Navy / Slate / Clean Professional
+   Pure Vanilla CSS - No external frameworks
+   ========================================================================== */
+
+:root {
+    --primary-color: #1e3a8a;       /* Deep Navy */
+    --primary-hover: #172554;
+    --accent-blue: #2563eb;         /* Academic Blue */
+    --accent-hover: #1d4ed8;
+    --text-main: #0f172a;           /* Dark Slate */
+    --text-muted: #475569;
+    --bg-main: #f8fafc;             /* Soft off-white */
+    --bg-card: #ffffff;
+    --border-color: #cbd5e1;
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --success-border: #86efac;
+    --error-bg: #fee2e2;
+    --error-text: #991b1b;
+    --error-border: #fca5a5;
+    --info-bg: #e0f2fe;
+    --info-text: #075985;
+    --info-border: #7dd3fc;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.portal-title h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.portal-title p {
+    font-size: 0.82rem;
+    color: #93c5fd;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 0.92rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.nav-links a.logout-btn {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.nav-links a.logout-btn:hover {
+    background-color: #dc2626;
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Layout
+   -------------------------------------------------------------------------- */
+.main-wrapper {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Login Cards & Centered Form Containers
+   -------------------------------------------------------------------------- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1rem;
+}
+
+.auth-card {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.auth-card h2 {
+    color: var(--primary-color);
+    font-size: 1.45rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
+}
+
+.auth-card .subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Forms & Form Controls
+   -------------------------------------------------------------------------- */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-main);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.05s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--accent-blue);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.88rem;
+}
+
+/* --------------------------------------------------------------------------
+   Alerts & Notifications
+   -------------------------------------------------------------------------- */
+.alert {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.alert-error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border-color: var(--error-border);
+}
+
+.alert-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border-color: var(--success-border);
+}
+
+.alert-info {
+    background-color: var(--info-bg);
+    color: var(--info-text);
+    border-color: var(--info-border);
+}
+
+/* --------------------------------------------------------------------------
+   Demo Credentials Note Box (for testing & viva demonstration)
+   -------------------------------------------------------------------------- */
+.demo-box {
+    margin-top: 1.5rem;
+    padding: 0.9rem;
+    background-color: #f8fafc;
+    border: 1px dashed #94a3b8;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.demo-box strong {
+    color: var(--text-main);
+}
+
+.demo-box ul {
+    margin-top: 0.35rem;
+    padding-left: 1.2rem;
+}
+
+.portal-switch {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.portal-switch a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.portal-switch a:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Dashboard & Content Cards
+   -------------------------------------------------------------------------- */
+.welcome-banner {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--accent-blue);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.welcome-banner h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.welcome-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.welcome-meta span {
+    margin-right: 1.2rem;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-card .stat-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Data Tables
+   -------------------------------------------------------------------------- */
+.content-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.section-header h3 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background-color: #f8fafc;
+    color: var(--text-main);
+    font-weight: 600;
+    border-top: 1px solid var(--border-color);
+}
+
+.data-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.empty-message {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #e2e8f0;
+    color: var(--text-main);
+}
+
+.badge-credits {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-register {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+}
+
+.btn-register:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-edit {
+    background-color: #0284c7;
+    color: #ffffff;
+}
+
+.btn-edit:hover {
+    background-color: #0369a1;
+}
+
+.btn-drop {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.btn-drop:hover {
+    background-color: #dc2626;
+}
+
+.btn-sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   Profile Details View
+   -------------------------------------------------------------------------- */
+.profile-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card h2 {
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 1.1rem;
+    column-gap: 1rem;
+    font-size: 0.95rem;
+}
+
+.profile-label {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.profile-value {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.profile-actions {
+    margin-top: 1.75rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+    text-align: right;
+}
+
+.btn-secondary {
+    background-color: #64748b;
+    color: #ffffff;
+    display: inline-block;
+    width: auto;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.82rem;
+    margin-top: auto;
+}
